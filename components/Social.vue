@@ -33,17 +33,19 @@
     </PopUp>
     <PopUp v-if="showPopUpPh" @closePopUp='closePopUp'>
       <div slot="phone">
-        <p>Form</p>
+        <Form />
       </div>
     </PopUp>
   </ul>
 </template>
 
 <script>
-import PopUp from "../components/PopUp"
+import PopUp from "~/components/PopUp"
+import Form from "~/components/Form"
   export default {
     components: {
-      PopUp
+      PopUp,
+      Form
     },
     data() {
       return {
@@ -61,7 +63,7 @@ import PopUp from "../components/PopUp"
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/base";
+@import "~/assets/base";
 .social {
   list-style: none;
   position: fixed;

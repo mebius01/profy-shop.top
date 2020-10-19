@@ -2,38 +2,7 @@
   <footer class="footer">
     <div class="row">
       <Contact />
-      <form class="form" name="form_footer">
-        <div class="form__item">
-          <label for="form_footer-name">Поле для имени</label>
-          <input
-            type="text"
-            name="call__text"
-            id="form_footer-name"
-            placeholder="Ваше Имя"
-          />
-        </div>
-        <div class="form__item">
-          <label for="form_footer-tel">Поле для телефона</label>
-          <input
-            type="tel"
-            name="call__tel"
-            id="form_footer-tel"
-            placeholder="+38(050)-123-23-34"
-          />
-        </div>
-        <div class="form__item" hidden>
-          <label for="form_footer-comment">Поле для Комментария</label>
-          <textarea
-            name="comment"
-            rows="3"
-            id="form_footer-comment"
-            placeholder="Комментарий"
-          ></textarea>
-        </div>
-        <div class="form__item">
-          <input type="submit" value="Жду Звонка" />
-        </div>
-      </form>
+      <Form />
     </div>
     <div class="footer__line"></div>
     <div class="copyright">
@@ -55,9 +24,11 @@
 
 <script>
 import Contact from "~/components/Contact"
+import Form from "~/components/Form"
   export default {
     components: {
-      Contact
+      Contact,
+      Form
     }
   }
 </script>
@@ -79,41 +50,6 @@ import Contact from "~/components/Contact"
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
-
-
-    .form {
-      padding: 40px;
-      // border: 1px solid red;
-      // @extend .contact;
-
-      &__item {
-        width: 100%;
-      }
-
-      label {
-        // opacity: 0
-        display: none;
-      }
-
-      input {
-        display: block;
-        border: none;
-        margin-bottom: 8px;
-        padding: 10px;
-        width: 100%;
-      }
-
-      input[type="submit"] {
-        background-color: $redLine;
-        color: white;
-        width: calc(#{100%} + #{20px});
-
-        &:hover {
-          @extend .pulse;
-        }
-      }
-    }
   }
 
   .copyright {
