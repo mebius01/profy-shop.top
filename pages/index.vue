@@ -18,55 +18,55 @@ export default {
   asyncData() {
     return {
       data: [
-              {
-                id: 1,
-                title: "Misfill+ ( Medical Lab)",
-                slug: "misfill-medical-lab",
-                description: "Филлеры,канюли, биоревитализант, мезококтейли, PRP филлер",
-                description_long: "",
-                img: "https://www.profy-shop.top/media/img/6.jpeg"
-              },
-              {
-                id: 2,
-                title: "Nanoestetic",
-                slug: "nanoestetic",
-                description: "Безинъекционная карбокситерапия. Альгинатные маски, уход за кожей лица",
-                description_long: "",
-                img: "https://www.profy-shop.top/media/img/5.jpeg"
-              },
-              {
-                id: 3,
-                title: "La Rossa",
-                slug: "la-rossa",
-                description: "Линия препаратов для профессионального шугаринга. Уходовая продукция  ДО  ПОСЛЕ депиляции. \r\nПрофессиональные пилинги  La Rossa Peels,  коррекция тела La Rosa Body",
-                description_long: "",
-                img: "https://www.profy-shop.top/media/img/4.jpeg"
-              },
-              {
-                id: 4,
-                title: "Панночка Premium",
-                slug: "pannochka-premium",
-                description: "Украинский бренд #1 в области сахарной депиляци с доступной ценой.",
-                description_long: "",
-                img: "https://www.profy-shop.top/media/img/3.jpeg"
-              },
-              {
-                id: 5,
-                title: "Satara",
-                slug: "satara",
-                description: "Профессиональный домашний уход за лицом, телом и волосами.",
-                description_long: "",
-                img: "https://www.profy-shop.top/media/img/2.jpeg"
-              },
-              {
-                id: 6,
-                title: "Pèlart Laboratory",
-                slug: "pelart-laboratory",
-                description: "Профессиональная израильско-украинская косметика. Пилинги. СО2 .Линия ухоа за телом.",
-                description_long: "",
-                img: "https://www.profy-shop.top/media/img/1.jpeg"
-              }
-            ]
+        {
+          id: 1,
+          title: "Misfill+ ( Medical Lab)",
+          slug: "misfill-medical-lab",
+          description: "Филлеры,канюли, биоревитализант, мезококтейли, PRP филлер",
+          description_long: "",
+          img: "https://www.profy-shop.top/media/img/6.jpeg"
+        },
+        {
+          id: 2,
+          title: "Nanoestetic",
+          slug: "nanoestetic",
+          description: "Безинъекционная карбокситерапия. Альгинатные маски, уход за кожей лица",
+          description_long: "",
+          img: "https://www.profy-shop.top/media/img/5.jpeg"
+        },
+        {
+          id: 3,
+          title: "La Rossa",
+          slug: "la-rossa",
+          description: "Линия препаратов для профессионального шугаринга. Уходовая продукция  ДО  ПОСЛЕ депиляции. \r\nПрофессиональные пилинги  La Rossa Peels,  коррекция тела La Rosa Body",
+          description_long: "",
+          img: "https://www.profy-shop.top/media/img/4.jpeg"
+        },
+        {
+          id: 4,
+          title: "Панночка Premium",
+          slug: "pannochka-premium",
+          description: "Украинский бренд #1 в области сахарной депиляци с доступной ценой.",
+          description_long: "",
+          img: "https://www.profy-shop.top/media/img/3.jpeg"
+        },
+        {
+          id: 5,
+          title: "Satara",
+          slug: "satara",
+          description: "Профессиональный домашний уход за лицом, телом и волосами.",
+          description_long: "",
+          img: "https://www.profy-shop.top/media/img/2.jpeg"
+        },
+        {
+          id: 6,
+          title: "Pèlart Laboratory",
+          slug: "pelart-laboratory",
+          description: "Профессиональная израильско-украинская косметика. Пилинги. СО2 .Линия ухоа за телом.",
+          description_long: "",
+          img: "https://www.profy-shop.top/media/img/1.jpeg"
+        }
+      ]
     }
   },
 }
