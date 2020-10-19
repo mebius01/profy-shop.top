@@ -1,5 +1,5 @@
 <template>
-  <ul class="social">
+  <ul class="social" :style="heightHeader">
     <li class="social__item" hidden>
       <a href="" class="social__link" target="_blank" id="menu">
         <img src="../static/img/menu.svg" alt="Меню сайта" />
@@ -50,15 +50,48 @@ import Form from "~/components/Form"
     data() {
       return {
         showPopUpMap: false,
-        showPopUpPh: false
+        showPopUpPh: false,
+        heightHeader: ''
       }
     },
     methods: {
       closePopUp() {
         this.showPopUpMap = false
         this.showPopUpPh = false
+      },
+      handleScroll() {
+        if (window.innerWidth > 640) {
+
+          if (document.documentElement.scrollTop > 200) {
+            this.heightHeader = 'top:5px'
+            console.log("Social Desctop 5px");
+          }
+          if (document.documentElement.scrollTop < 200) {
+            this.heightHeader = 'top:200px'
+            console.log("Social Desctop 200px");
+          }
+        }
+        if (window.innerWidth < 640) {
+          if (document.documentElement.scrollTop > 140) {
+            this.heightHeader = 'top:5px'
+            console.log("Social Mobile 5px");
+          }
+          if (document.documentElement.scrollTop < 200) {
+            this.heightHeader = 'top:140px'
+            console.log("Social Mobile 140px");
+          }
+        }
+      }
     },
-    }
+    created() {
+      if (process.browser) {
+        window.addEventListener('scroll', this.handleScroll);
+      }
+    },
+    
+    destroyed() {
+      window.removeEventListener('scroll', this.handleScroll);
+    },
   }
 </script>
 
@@ -81,8 +114,6 @@ import Form from "~/components/Form"
   &__link {
     display: block;
     text-align: center;
-    // width: 32px;
-    // height: 32px;
     padding: 2px;
 
     &:hover {
