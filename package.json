@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "npx": "^10.2.2",
     "nuxt": "^2.0.0",
     "wow.js": "^1.2.2"
   },
