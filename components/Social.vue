@@ -2,28 +2,28 @@
   <ul class="social">
     <li class="social__item" hidden>
       <a href="" class="social__link" target="_blank" id="menu">
-        <img src="../static/img/menu.svg" alt="Меню сайта" />
+        <img src="~/static/img/menu.svg" alt="Меню сайта" />
       </a>
     </li>
     <li class="social__item">
       <a href="https://www.facebook.com/profyshoptop" class="social__link"
         rel="noreferrer" target="_blank" id="facebook"><img
-          src="../static/img/facebook.svg" alt="Facebook Profy Shop" /></a>
+          src="~/static/img/facebook.png" alt="Facebook Profy Shop" /></a>
     </li>
     <li class="social__item">
       <a href="https://www.instagram.com/profyshop_top/" class="social__link"
         rel="noreferrer" target="_blank" id="instagram"><img
-          src="../static/img/instagram.svg"
+          src="~/static/img/instagram.png"
           alt="Instagram Profy Shop" /></a>
     </li>
     <li class="social__item">
       <a @click.prevent="showPopUpMap = !showPopUpMap" href="" class="social__link">
-        <img src="../static/img/google-maps.svg" alt="Где мы находимся" />
+        <img src="~/static/img/google-maps.png" alt="Где мы находимся" />
       </a>
     </li>
     <li class="social__item">
       <a @click.prevent="showPopUpPh = !showPopUpPh" href="" class="social__link">
-        <img src="../static/img/telephone.svg" alt="Кнопка Жду Звонка" />
+        <img src="~/static/img/telephone.png" alt="Кнопка Жду Звонка" />
       </a>
     </li>
     <PopUp v-if="showPopUpMap" @closePopUp='closePopUp'>

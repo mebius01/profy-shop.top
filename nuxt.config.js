@@ -2,7 +2,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  mode: 'universal',
+target: 'static',
   head: {
     title: 'profy-shop.top',
     meta: [
