@@ -13,15 +13,14 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "npx": "^10.2.2",
     "nuxt": "^2.0.0",
     "wow.js": "^1.2.2"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "eslint": "^4.19.1",
+    "eslint": "^7.11.0",
     "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^4.0.0",
+    "eslint-loader": "^4.0.2",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.3"
   }

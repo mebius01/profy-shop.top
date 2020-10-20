@@ -2,7 +2,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  mode: 'universal',
+target: 'static',
   head: {
     title: 'profy-shop.top',
     meta: [
@@ -11,8 +11,10 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Rubik:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap'}
+    ],
   },
   /*
   ** Customize the progress bar color

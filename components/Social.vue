@@ -1,5 +1,5 @@
 <template>
-  <ul class="social">
+  <ul class="social" :style="heightHeader">
     <li class="social__item" hidden>
       <a href="" class="social__link" target="_blank" id="menu">
         <img src="../static/img/menu.svg" alt="Меню сайта" />
@@ -8,22 +8,22 @@
     <li class="social__item">
       <a href="https://www.facebook.com/profyshoptop" class="social__link"
         rel="noreferrer" target="_blank" id="facebook"><img
-          src="../static/img/facebook.svg" alt="Facebook Profy Shop" /></a>
+          src="../static/img/facebook.png" alt="Facebook Profy Shop" /></a>
     </li>
     <li class="social__item">
       <a href="https://www.instagram.com/profyshop_top/" class="social__link"
         rel="noreferrer" target="_blank" id="instagram"><img
-          src="../static/img/instagram.svg"
+          src="../static/img/instagram.png"
           alt="Instagram Profy Shop" /></a>
     </li>
     <li class="social__item">
       <a @click.prevent="showPopUpMap = !showPopUpMap" href="" class="social__link">
-        <img src="../static/img/google-maps.svg" alt="Где мы находимся" />
+        <img src="../static/img/google-maps.png" alt="Где мы находимся" />
       </a>
     </li>
     <li class="social__item">
       <a @click.prevent="showPopUpPh = !showPopUpPh" href="" class="social__link">
-        <img src="../static/img/telephone.svg" alt="Кнопка Жду Звонка" />
+        <img src="../static/img/telephone.png" alt="Кнопка Жду Звонка" />
       </a>
     </li>
     <PopUp v-if="showPopUpMap" @closePopUp='closePopUp'>
@@ -50,15 +50,48 @@ import Form from "~/components/Form"
     data() {
       return {
         showPopUpMap: false,
-        showPopUpPh: false
+        showPopUpPh: false,
+        heightHeader: ''
       }
     },
     methods: {
       closePopUp() {
         this.showPopUpMap = false
         this.showPopUpPh = false
+      },
+      handleScroll() {
+        if (window.innerWidth > 640) {
+
+          if (document.documentElement.scrollTop > 200) {
+            this.heightHeader = 'top:5px'
+            console.log("Social Desctop 5px");
+          }
+          if (document.documentElement.scrollTop < 200) {
+            this.heightHeader = 'top:200px'
+            console.log("Social Desctop 200px");
+          }
+        }
+        if (window.innerWidth < 640) {
+          if (document.documentElement.scrollTop > 140) {
+            this.heightHeader = 'top:5px'
+            console.log("Social Mobile 5px");
+          }
+          if (document.documentElement.scrollTop < 200) {
+            this.heightHeader = 'top:140px'
+            console.log("Social Mobile 140px");
+          }
+        }
+      }
     },
-    }
+    created() {
+      if (process.browser) {
+        window.addEventListener('scroll', this.handleScroll);
+      }
+    },
+    
+    destroyed() {
+      window.removeEventListener('scroll', this.handleScroll);
+    },
   }
 </script>
 
@@ -81,8 +114,6 @@ import Form from "~/components/Form"
   &__link {
     display: block;
     text-align: center;
-    // width: 32px;
-    // height: 32px;
     padding: 2px;
 
     &:hover {
