@@ -43,6 +43,12 @@ import clock from "../static/img/clock.svg"
   padding: 40px;
   color: white;
 
+  &__item {
+    @media (min-width: 320px) and (max-width: 640px) {
+      padding: 5px 0;
+    }
+  }
+
   &__link {
     color: white;
     text-decoration: none;

@@ -16,17 +16,18 @@ target: 'static',
         href: 'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Rubik:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap'}
     ],
   },
-  /*
-  ** Customize the progress bar color
-  */
+  modules: [
+    '@nuxtjs/axios',
+  ],
+  axios: {
+    baseURL: "http://localhost:8000/api"
+  },
   loading: { color: '#3B8070' },
   /*
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
+    vendor: ['vue-notifications'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -37,6 +38,10 @@ target: 'static',
         })
       }
     }
-  }
+  },
+  plugins: [{src: '~plugins/vue-notifications', ssr: false},]
+//   plugins: [
+//     '~/plugins/vue-notifications.js',
+//   ],
 }
 

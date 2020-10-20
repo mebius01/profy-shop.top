@@ -2,6 +2,7 @@
   <div>
     <Header />
     <nuxt/>
+    <notifications group="all" />/>
     <div class="dark-line"></div>
     <Social />
     <Footer />

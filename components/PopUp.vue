@@ -20,7 +20,7 @@
     methods: {
       close() {
         this.animationClass = "zoomOut"
-        setTimeout(() => this.$emit('closePopUp'), 500);
+        setTimeout(() => this.$emit('close-pop-up'), 500);
       },
       closeEsc(e) {
         if (e.keyCode == 27) {

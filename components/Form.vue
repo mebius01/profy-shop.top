@@ -48,7 +48,8 @@
     methods:{
       postData() {
         console.log(this.form);
-      }
+        this.$notify({ group: 'all', title: "Success", text: 'Heyy !!!' })
+      },
     }
   }
 </script>

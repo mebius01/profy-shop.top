@@ -1,10 +1,5 @@
 <template>
-  <ul class="social" :style="heightHeader">
-    <li class="social__item" hidden>
-      <a href="" class="social__link" target="_blank" id="menu">
-        <img src="../static/img/menu.svg" alt="Меню сайта" />
-      </a>
-    </li>
+  <ul class="social" :style="topSocial">
     <li class="social__item">
       <a href="https://www.facebook.com/profyshoptop" class="social__link"
         rel="noreferrer" target="_blank" id="facebook"><img
@@ -26,12 +21,12 @@
         <img src="../static/img/telephone.png" alt="Кнопка Жду Звонка" />
       </a>
     </li>
-    <PopUp v-if="showPopUpMap" @closePopUp='closePopUp'>
+    <PopUp v-if="showPopUpMap" @close-pop-up='closePopUp'>
       <div slot="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5446.943175925086!2d32.06610570892015!3d46.95902743915468!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c5caff9cb8a3c5%3A0xd114e4e38546ffcc!2z0YPQuy4g0JrQvtGB0LzQvtC90LDQstGC0L7QsiwgMTI00JAsINCd0LjQutC-0LvQsNC10LIsINCd0LjQutC-0LvQsNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNTQwMDA!5e0!3m2!1sru!2sua!4v1603109486164!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
     </PopUp>
-    <PopUp v-if="showPopUpPh" @closePopUp='closePopUp'>
+    <PopUp v-if="showPopUpPh" @close-pop-up='closePopUp'>
       <div slot="phone">
         <Form />
       </div>
@@ -51,7 +46,7 @@ import Form from "~/components/Form"
       return {
         showPopUpMap: false,
         showPopUpPh: false,
-        heightHeader: ''
+        topSocial: ''
       }
     },
     methods: {
@@ -63,21 +58,21 @@ import Form from "~/components/Form"
         if (window.innerWidth > 640) {
 
           if (document.documentElement.scrollTop > 200) {
-            this.heightHeader = 'top:5px'
+            this.topSocial = 'top:5px'
             console.log("Social Desctop 5px");
           }
           if (document.documentElement.scrollTop < 200) {
-            this.heightHeader = 'top:200px'
+            this.topSocial = 'top:200px'
             console.log("Social Desctop 200px");
           }
         }
         if (window.innerWidth < 640) {
           if (document.documentElement.scrollTop > 140) {
-            this.heightHeader = 'top:5px'
+            this.topSocial = 'top:5px'
             console.log("Social Mobile 5px");
           }
           if (document.documentElement.scrollTop < 200) {
-            this.heightHeader = 'top:140px'
+            this.topSocial = 'top:140px'
             console.log("Social Mobile 140px");
           }
         }
@@ -102,6 +97,7 @@ import Form from "~/components/Form"
   position: fixed;
   top: $heightHeader;
   right: 10px;
+  transition: top 1s;
 
   @media (min-width: 320px) and (max-width: 640px) {
     top: $heightHeader - 60;
