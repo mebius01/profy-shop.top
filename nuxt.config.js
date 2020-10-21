@@ -20,7 +20,7 @@ target: 'static',
     '@nuxtjs/axios',
   ],
   axios: {
-    baseURL: "http://localhost:8000/api"
+    baseURL: "https://localhost:8000/api"
   },
   loading: { color: '#3B8070' },
   /*
