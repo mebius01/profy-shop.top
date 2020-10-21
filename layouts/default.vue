@@ -2,7 +2,8 @@
   <div>
     <Header />
     <nuxt/>
-    <notifications group="all" />
+    <!-- <notifications group="all" /> -->
+    <FlashMessage></FlashMessage>
     <div class="dark-line"></div>
     <Social />
     <Footer />

@@ -47,8 +47,10 @@
     },
     methods:{
       postData() {
-        console.log(this.form);
-        this.$notify({ group: 'all', title: "Success", text: 'Heyy !!!' })
+        console.log(this.flashMessage);
+        this.flashMessage.info(
+          {status: 'info', title: 'Error Message Title', message: 'Oh, you broke my heart! Shame on you!', time: 1000, flashMessageStyle: {backgroundColor: 'linear-gradient(#e66465, #9198e5)'}})
+        // this.$notify({ group: 'all', type: "info", title: "Success", text: 'Heyy !!!' })
       },
     }
   }

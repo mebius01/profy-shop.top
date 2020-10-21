@@ -59,21 +59,17 @@ import Form from "~/components/Form"
 
           if (document.documentElement.scrollTop > 200) {
             this.topSocial = 'top:5px'
-            console.log("Social Desctop 5px");
           }
           if (document.documentElement.scrollTop < 200) {
             this.topSocial = 'top:200px'
-            console.log("Social Desctop 200px");
           }
         }
         if (window.innerWidth < 640) {
           if (document.documentElement.scrollTop > 140) {
             this.topSocial = 'top:5px'
-            console.log("Social Mobile 5px");
           }
           if (document.documentElement.scrollTop < 200) {
             this.topSocial = 'top:140px'
-            console.log("Social Mobile 140px");
           }
         }
       }

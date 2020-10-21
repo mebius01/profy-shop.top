@@ -20,7 +20,7 @@ target: 'static',
     '@nuxtjs/axios',
   ],
   axios: {
-    baseURL: "https://localhost:8000/api"
+    baseURL: "https://profy-shop.top/api"
   },
   loading: { color: '#3B8070' },
   /*
@@ -39,9 +39,10 @@ target: 'static',
       }
     }
   },
-  plugins: [{src: '~plugins/vue-notifications', ssr: false},]
-//   plugins: [
-//     '~/plugins/vue-notifications.js',
-//   ],
+  plugins: [
+    // { src: '@/plugins/vue-notifications', ssr: false },
+    { src: '@/plugins/message', ssr: false },
+    { src: "@/plugins/aos", ssr: false }
+  ]
 }
 
