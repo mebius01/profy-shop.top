@@ -1,5 +1,10 @@
 <template>
-  <article class="article wow scale-in-ver-bottom">
+  <article  class="article"
+            data-aos="fade-up"
+            data-aos-offset="222" 
+            data-aos-delay="150"
+            data-aos-easing="ease-in-out"
+            data-aos-once="false">
     <div class="article__img">
       <img :src="object.img" :alt="object.title" class="img" />
     </div>

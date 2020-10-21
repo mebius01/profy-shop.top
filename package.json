@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.2",
+    "@smartweb/vue-flash-message": "^0.6.10",
+    "aos": "^3.0.0-beta.6",
     "babel-eslint": "^10.1.0",
     "eslint-plugin-vue": "^7.1.0",
     "npx": "^10.2.2",

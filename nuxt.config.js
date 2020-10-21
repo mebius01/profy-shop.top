@@ -39,9 +39,10 @@ target: 'static',
       }
     }
   },
-  plugins: [{src: '~plugins/vue-notifications', ssr: false},]
-//   plugins: [
-//     '~/plugins/vue-notifications.js',
-//   ],
+  plugins: [
+    // { src: '@/plugins/vue-notifications', ssr: false },
+    { src: '@/plugins/message', ssr: false },
+    { src: "@/plugins/aos", ssr: false }
+  ]
 }
 
