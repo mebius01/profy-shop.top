@@ -1,7 +1,5 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
+
 target: 'static',
   head: {
     title: 'profy-shop.top',
@@ -23,9 +21,6 @@ target: 'static',
     baseURL: "https://profy-shop.top/api"
   },
   loading: { color: '#3B8070' },
-  /*
-  ** Build configuration
-  */
   build: {
     vendor: ['vue-notifications'],
     extend (config, { isDev, isClient }) {
@@ -40,9 +35,8 @@ target: 'static',
     }
   },
   plugins: [
-    // { src: '@/plugins/vue-notifications', ssr: false },
-    { src: '@/plugins/message', ssr: false },
     { src: "@/plugins/aos", ssr: false }
   ]
+
 }
 

@@ -2,8 +2,6 @@
   <div>
     <Header />
     <nuxt/>
-    <!-- <notifications group="all" /> -->
-    <FlashMessage></FlashMessage>
     <div class="dark-line"></div>
     <Social />
     <Footer />
@@ -18,7 +16,7 @@ export default {
   components: {
     Header,
     Footer,
-    Social
+    Social,
   }
 }
 </script>

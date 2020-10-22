@@ -1,9 +1,9 @@
 <template>
-  <form class="form" name="form_footer">
+  <form class="form" ref="form">
     <div class="form__item">
       <label for="form_footer-name">Поле для имени</label>
       <input
-        v-model="form.name"
+        v-model="name"
         type="text"
         name="call__text"
         id="form_footer-name"
@@ -13,7 +13,7 @@
     <div class="form__item">
       <label for="form_footer-tel">Поле для телефона</label>
       <input
-        v-model="form.phone"
+        v-model="phone"
         type="tel"
         name="call__tel"
         id="form_footer-tel"
@@ -32,25 +32,84 @@
     <div class="form__item">
       <input @click.prevent="postData" type="submit" value="Жду Звонка" />
     </div>
+    <Notification v-if="error.length">
+      <div slot="msg">
+        <p>
+          <b>Please correct the following error(s):</b>
+          <ul>
+            <li v-for="(item, index) in error" :key="index">{{ item }}</li>
+          </ul>
+        </p>
+      </div>
+    </Notification>
   </form>
 </template>
 
 <script>
+import Notification from "../components/Notification"
   export default {
+    components: {
+      Notification
+    },
     data() {
       return {
-        form: {
-          name: null,
-          phone: null
-        }
+        error: [],
+        name: null,
+        phone: null
       }
     },
     methods:{
+      nameValidation(param){
+        if (param) {
+          return true
+        }
+        else {
+          this.error.push("Пожалуйста введите корректное Имя")
+          return false
+        }
+      },
+      phoneValidation(param){
+        let re = /^(\+{0,})(\d{0,})([(]{1}\d{1,3}[)]{0,}){0,}(\s?\d+|\+\d{2,3}\s{1}\d+|\d+){1}[\s|-]?\d+([\s|-]?\d+){1,2}(\s){0,}$/
+        if (re.test(param)) {
+          return true
+        } else {
+          this.error.push("Пожалуйста введите корректный Телефон")
+          return false
+        }
+      },
+      resetForm(){
+        this.name = null,
+        this.phone = null
+        this.$refs.form.reset()
+      },
+      sendData(){
+        console.log(
+          {
+            name: this.name,
+            phone: this.phone
+          }
+        )
+      },
       postData() {
-        console.log(this.flashMessage);
-        this.flashMessage.info(
-          {status: 'info', title: 'Error Message Title', message: 'Oh, you broke my heart! Shame on you!', time: 1000, flashMessageStyle: {backgroundColor: 'linear-gradient(#e66465, #9198e5)'}})
-        // this.$notify({ group: 'all', type: "info", title: "Success", text: 'Heyy !!!' })
+        let phoneValidation = this.phoneValidation(this.phone)
+        let nameValidation = this.nameValidation(this.name)
+
+        if (phoneValidation && nameValidation) {
+            this.sendData()
+        }
+        else {
+          console.log(
+            `${nameValidation} + ${this.name}`,
+            `${phoneValidation} + ${this.phone}`,
+            this.error
+          )
+          setTimeout(
+            () => {
+              this.error = []
+            },
+            3000
+          )
+        }
       },
     }
   }

@@ -17,6 +17,7 @@
 
 <script>
   export default {
+    name: 'Category',
     props: {
       object: {
         type: Object,

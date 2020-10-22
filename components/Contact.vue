@@ -19,6 +19,7 @@ import map from "../static/img/map.svg"
 import clock from "../static/img/clock.svg"
 
   export default {
+    name: 'Contact',
     data() {
       return {
         contact: [
