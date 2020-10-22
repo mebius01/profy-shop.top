@@ -32,8 +32,9 @@
     <div class="form__item">
       <input @click.prevent="postData" type="submit" value="Жду Звонка" />
     </div>
-    <Notification v-if="error.length">
-      <div slot="msg">
+    <Notification>
+      <!-- v-if="error.length" -->
+      <div slot="error" v-if="error.length">
         <p>
           <b>Please correct the following error(s):</b>
           <ul>
@@ -55,7 +56,8 @@ import Notification from "../components/Notification"
       return {
         error: [],
         name: null,
-        phone: null
+        phone: null,
+        msg: false
       }
     },
     methods:{
