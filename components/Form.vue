@@ -32,26 +32,41 @@
     <div class="form__item">
       <input @click.prevent="postData" type="submit" value="Жду Звонка" />
     </div>
-    <Notification v-if="notification">
-      <ul slot="error" v-if="error.length">
-        <li v-for="(item, index) in error" :key="index">{{ item }}</li>
-      </ul>
-    </Notification>
+    <!-- <div class="not"> -->
+      <div class="success" :class="classAnimation" v-if="success">
+        <div class="icon">
+          <img src="~static/img/checked.png" alt="">
+        </div>
+        <div class="content">
+          <p style="color: #e74c3c;">{{name}}</p>
+          <p>Спасибо за Ваше обращение, мы обязательно с Вами свяжемся в течении </p>
+          <p style="color: #e74c3c;">10 минут</p>
+        </div>
+      </div>
+      <div class="error" :class="classAnimation" v-if="error.length">
+        <div class="icon">
+          <img src="~static/img/exclamation.png" alt="">
+        </div>
+        <div class="content">
+          <ul slot="error" v-if="error.length">
+            <li v-for="(item, index) in error" :key="index"> * {{ item }}</li>
+          </ul>
+        </div>
+      </div>
+    <!-- </div> -->
   </form>
 </template>
 
 <script>
-import Notification from "../components/Notification"
   export default {
-    components: {
-      Notification
-    },
     data() {
       return {
+        animationClass: "",
         error: [],
         name: null,
         phone: null,
-        notification: false
+        success: false,
+        classAnimation: "slideInRight"
       }
     },
     methods:{
@@ -79,34 +94,42 @@ import Notification from "../components/Notification"
         this.$refs.form.reset()
       },
       sendData(){
-        console.log(
-          {
-            name: this.name,
-            phone: this.phone
-          }
-        )
+        let data = {
+          name: this.name,
+          telephone: this.phone,
+          comment: 'Пустой коментарий'
+        }
+        const headers = {"Content-type": "application/json; charset=UTF-8"}
+
+        this.$axios.$post('/post/', data, headers)
+          .then((response) => {
+            if (response) {
+              this.success = true
+              setTimeout(() => this.classAnimation = "slideOutRight", 3000)
+              setTimeout(() => {
+                this.success = false
+                this.classAnimation = "slideInRight" 
+              }, 4000)
+              this.resetForm()
+            }
+          })
+      },
+      errorData() {
+        setTimeout(() => this.classAnimation = "slideOutRight", 3000)
+        setTimeout(() => {
+          this.error = []
+          this.classAnimation = "slideInRight" 
+        }, 4000)
       },
       postData() {
         let phoneValidation = this.phoneValidation(this.phone)
         let nameValidation = this.nameValidation(this.name)
 
         if (phoneValidation && nameValidation) {
-            this.sendData()
+          this.sendData()
         }
         else {
-          console.log(
-            `${nameValidation} + ${this.name}`,
-            `${phoneValidation} + ${this.phone}`,
-            this.error
-          )
-          this.notification = true
-          setTimeout(
-            () => {
-              this.error = []
-              this.notification = false
-            },
-            3000
-          )
+          this.errorData()
         }
       },
     }
@@ -143,6 +166,70 @@ import Notification from "../components/Notification"
     &:hover {
       @extend .pulse;
     }
+  }
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+    visibility: visible;
+  }
+  100% {
+    transform: translateX(0);
+  }
+} 
+.slideOutRight {
+  animation-name: slideOutRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    visibility: hidden;
+    transform: translateX(100%);
+  }
+} 
+
+.error {
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  z-index: 9999;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 10px;
+  background: rgb(255, 168, 168);
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 4px solid rgb(255, 94, 94);
+  }
+}
+
+.success {
+  @extend .error;
+  background: rgb(162, 255, 162);
+
+  .icon {
+    @extend .icon;
+    border-right: 4px solid #5CBB5C;
   }
 }
 </style>

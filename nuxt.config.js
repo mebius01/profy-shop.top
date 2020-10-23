@@ -2,11 +2,20 @@ module.exports = {
 
 target: 'static',
   head: {
-    title: 'profy-shop.top',
+    title: 'Profy Shop Top - Красота в Твоих руках!',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { property: "og:type", content: "business.business" },
+      { property: "og:title", content: "Profy Shop Top - Красота в Твоих руках!" },
+      { property: "og:url", content: "https://profy-shop.top" },
+      { property: "og:image", content: "https://profy-shop.top/static/img/logo.png" },
+      { property: "business:contact_data:street_address", content: "Космонавтов 124Б, офис 2" },
+      { property: "business:contact_data:locality", content: "Николаев" },
+      { property: "business:contact_data:region", content: "Николаевская" },
+      { property: "business:contact_data:postal_code", content: "54000" },
+      { property: "business:contact_data:country_name", content: "UA" },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -17,8 +26,13 @@ target: 'static',
   modules: [
     '@nuxtjs/axios',
   ],
+  loading: {
+    color: '#E74C3C',
+    height: '30px'
+  },
   axios: {
-    baseURL: "https://profy-shop.top/api"
+    // baseURL: "https://profy-shop.top/api"
+    baseURL: "http://127.0.0.1:8000/api"
   },
   loading: { color: '#3B8070' },
   build: {
@@ -35,7 +49,8 @@ target: 'static',
     }
   },
   plugins: [
-    { src: "@/plugins/aos", ssr: false }
+    { src: "@/plugins/aos", ssr: false },
+    { src: "@/plugins/jsonld", ssr: true }
   ]
 
 }

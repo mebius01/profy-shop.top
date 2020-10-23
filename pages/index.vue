@@ -15,6 +15,18 @@ export default {
   components: {
     Category
   },
+  head() {
+    return {
+      title: "Profy Shop Top - Красота в Твоих руках!",
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Profy Shop Top - beauty-room оригинальной косметики для профессионального и домашнего ухода за лицом и телом'
+        }
+      ]
+    }
+  },
   async asyncData({ $axios, params }) {
     try {
       let data = await $axios.$get(`/categories/`);
