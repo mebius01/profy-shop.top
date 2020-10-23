@@ -32,16 +32,10 @@
     <div class="form__item">
       <input @click.prevent="postData" type="submit" value="Жду Звонка" />
     </div>
-    <Notification>
-      <!-- v-if="error.length" -->
-      <div slot="error" v-if="error.length">
-        <p>
-          <b>Please correct the following error(s):</b>
-          <ul>
-            <li v-for="(item, index) in error" :key="index">{{ item }}</li>
-          </ul>
-        </p>
-      </div>
+    <Notification v-if="notification">
+      <ul slot="error" v-if="error.length">
+        <li v-for="(item, index) in error" :key="index">{{ item }}</li>
+      </ul>
     </Notification>
   </form>
 </template>
@@ -57,7 +51,7 @@ import Notification from "../components/Notification"
         error: [],
         name: null,
         phone: null,
-        msg: false
+        notification: false
       }
     },
     methods:{
@@ -105,9 +99,11 @@ import Notification from "../components/Notification"
             `${phoneValidation} + ${this.phone}`,
             this.error
           )
+          this.notification = true
           setTimeout(
             () => {
               this.error = []
+              this.notification = false
             },
             3000
           )

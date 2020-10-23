@@ -1,11 +1,16 @@
 <template>
   <div class="not" :class="animationClass" @keydown.passive.esc="exc">
-    <div class="info">
-      <slot name="info"></slot>
+    <div class="success">
+      <div class="icon">
+        <img src="~static/img/checked.png" alt="">
+      </div>
+      <div class="content">
+        <slot name="success"></slot>
+      </div>
     </div>
     <div class="error">
       <div class="icon">
-        .
+        <img src="~static/img/exclamation.png" alt="">
       </div>
       <div class="content">
         <slot name="error"></slot>
@@ -64,12 +69,22 @@
   background: rgb(255, 168, 168);
 
   .icon {
-    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
     margin-right: 10px;
     border-right: 4px solid rgb(255, 94, 94);
   }
 }
-.info {
+
+.success {
+  @extend .error;
   background: rgb(168, 255, 168);
+
+  .icon {
+    @extend .icon;
+    border-right: 4px solid #5CBB5C;
+  }
 }
 </style>
