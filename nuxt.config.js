@@ -1,6 +1,7 @@
 module.exports = {
 
-target: 'static',
+  target: 'static',
+
   head: {
     title: 'Profy Shop Top - Красота в Твоих руках!',
     meta: [
@@ -23,20 +24,28 @@ target: 'static',
         href: 'https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Rubik:ital,wght@0,400;0,500;0,700;0,900;1,900&display=swap'}
     ],
   },
+
   modules: [
     '@nuxtjs/axios',
+    '@nuxtjs/google-analytics'
   ],
-  loading: {
-    color: '#E74C3C',
-    height: '30px'
+
+  googleAnalytics: {
+    id: 'UA-12301-2'
   },
+
+  loading: {
+    color: '#B1DDEA',
+    height: '10px',
+    continuous: true,
+  },
+
   axios: {
     // baseURL: "https://profy-shop.top/api"
     baseURL: "http://127.0.0.1:8000/api"
   },
-  loading: { color: '#3B8070' },
+
   build: {
-    vendor: ['vue-notifications'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -48,6 +57,7 @@ target: 'static',
       }
     }
   },
+
   plugins: [
     { src: "@/plugins/aos", ssr: false },
     { src: "@/plugins/jsonld", ssr: true }

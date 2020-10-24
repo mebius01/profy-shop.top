@@ -30,6 +30,42 @@ import clock from "../static/img/clock.svg"
         ]
       }
     },
+    jsonld() {
+      return {
+        "@context": "https://schema.org",
+        "@type": "WholesaleStore",
+        "name": "Profy Shop Top",
+        "image": "https://profy-shop.top/static/img/logo.png",
+        "@id": "",
+        "url": "https://profy-shop.top",
+        "telephone": "+380963128203",
+        "priceRange": "300-6000",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Космонавтов 124Б, офис 2",
+          "addressLocality": "Николаев",
+          "postalCode": "54000",
+          "addressCountry": "UA"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 46.958689,
+          "longitude": 32.069591
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "17:00"
+        }
+      };
+    },
   }
 </script>
 
