@@ -16,31 +16,31 @@
         <img src="../static/img/google-maps.png" alt="Где мы находимся" />
       </a>
     </li>
-    <li class="social__item">
+    <!-- <li class="social__item">
       <a @click.prevent="showPopUpPh = !showPopUpPh" href="" class="social__link">
         <img src="../static/img/telephone.png" alt="Кнопка Жду Звонка" />
       </a>
-    </li>
+    </li> -->
     <PopUp v-if="showPopUpMap" @close-pop-up='closePopUp'>
       <div slot="map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5446.943175925086!2d32.06610570892015!3d46.95902743915468!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c5caff9cb8a3c5%3A0xd114e4e38546ffcc!2z0YPQuy4g0JrQvtGB0LzQvtC90LDQstGC0L7QsiwgMTI00JAsINCd0LjQutC-0LvQsNC10LIsINCd0LjQutC-0LvQsNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNTQwMDA!5e0!3m2!1sru!2sua!4v1603109486164!5m2!1sru!2sua" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
     </PopUp>
-    <PopUp v-if="showPopUpPh" @close-pop-up='closePopUp'>
+    <!-- <PopUp v-if="showPopUpPh" @close-pop-up='closePopUp'>
       <div slot="phone">
         <Form />
       </div>
-    </PopUp>
+    </PopUp> -->
   </ul>
 </template>
 
 <script>
 import PopUp from "~/components/PopUp"
-import Form from "~/components/Form"
+// import Form from "~/components/Form"
   export default {
     components: {
       PopUp,
-      Form
+      // Form
     },
     data() {
       return {
@@ -50,10 +50,10 @@ import Form from "~/components/Form"
       }
     },
     methods: {
-      closePopUp() {
-        this.showPopUpMap = false
-        this.showPopUpPh = false
-      },
+      // closePopUp() {
+      //   this.showPopUpMap = false
+      //   this.showPopUpPh = false
+      // },
       handleScroll() {
         if (window.innerWidth > 640) {
 
@@ -102,6 +102,7 @@ import Form from "~/components/Form"
 
   &__item {
     margin: 5px auto;
+    
   }
   &__link {
     display: block;
