@@ -1,5 +1,6 @@
 module.exports = {
 
+  buildDir: 'dist',
   target: 'static',
 
   head: {
@@ -31,7 +32,7 @@ module.exports = {
   ],
 
   googleAnalytics: {
-    id: 'UA-12301-2'
+    id: 'G-GRS5XES1K6'
   },
 
   loading: {
