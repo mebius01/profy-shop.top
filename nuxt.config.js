@@ -36,7 +36,7 @@ module.exports = {
   ],
 
   gtm: {
-    id: 'GTM-XXXXXXX'
+    id: 'GTM-K8HWWMZ'
   },
 
   robots: {
