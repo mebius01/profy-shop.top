@@ -13,17 +13,16 @@
 </template>
 
 <script>
-import smartphone from "../static/img/smartphone.svg"
-import mail from "../static/img/mail.svg"
-import map from "../static/img/map.svg"
-import clock from "../static/img/clock.svg"
-
+import smartphone from "~/static/img/smartphone.svg"
+import mail from "~/static/img/mail.svg"
+import map from "~/static/img/map.svg"
+import clock from "~/static/img/clock.svg"
   export default {
     name: 'Contact',
     data() {
       return {
         contact: [
-          {name: "telephone", img: smartphone, alt: "", context: '+38(096)312-82-03', href:"tel:+123456789"},
+          {name: "telephone", img: smartphone, alt: "", context: '+38(096)312-82-03', href:"tel:+380963128203"},
           {name: "email", img: mail, alt: "", context: 'profy.shop.top@gmail.com', href:"mailto:profy.shop.top@gmail.com"},
           {name: "address", img: map, alt: "", context: 'г. Николаев, ул. Космонавтов 124Б', href:"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1619.1897115256013!2d32.067177559436224!3d46.95890688298181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c5caff9cb8a3c5%3A0xd114e4e38546ffcc!2z0YPQuy4g0JrQvtGB0LzQvtC90LDQstGC0L7QsiwgMTI00JAsINCd0LjQutC-0LvQsNC10LIsINCd0LjQutC-0LvQsNC10LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNTQwMDA!5e0!3m2!1sru!2sua!4v1594713259040!5m2!1sru!2sua"},
           {name: "schedule", img: clock, alt: "", context: 'ПН-ПТ: 10.00 - 17.00', href:false},
@@ -35,7 +34,7 @@ import clock from "../static/img/clock.svg"
         "@context": "https://schema.org",
         "@type": "WholesaleStore",
         "name": "Profy Shop Top",
-        "image": "https://profy-shop.top/static/img/logo.png",
+        "image": "https://profy-shop.top/static/logo.jpg",
         "@id": "",
         "url": "https://profy-shop.top",
         "telephone": "+380963128203",

@@ -99,12 +99,12 @@
           telephone: this.phone,
           comment: 'Пустой коментарий'
         }
-        const headers = {
-          "Content-type": "application/json; charset=UTF-8",
-          "X-CSRFToken": csrfToken
-        }
+        // const headers = {
+        //   "Content-type": "application/json; charset=UTF-8",
+        //   "X-CSRFToken": csrfToken
+        // }
 
-        this.$axios.$post('/post/', data, headers)
+        this.$axios.$post('/post/', data, /**headers*/)
           .then((response) => {
             if (response) {
               this.success = true

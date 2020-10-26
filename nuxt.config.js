@@ -1,9 +1,12 @@
 module.exports = {
 
   buildDir: 'dist',
-  target: 'static',
+  target: 'server',
 
   head: {
+    htmlAttrs: {
+      lang: 'ru'
+    },
     title: 'Profy Shop Top - Красота в Твоих руках!',
     meta: [
       { charset: 'utf-8' },
@@ -28,11 +31,17 @@ module.exports = {
 
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/gtm',
+    '@nuxtjs/robots'
   ],
 
-  googleAnalytics: {
-    id: 'G-GRS5XES1K6'
+  gtm: {
+    id: 'GTM-XXXXXXX'
+  },
+
+  robots: {
+    UserAgent: '*',
+    Disallow: ['/api', '/admin'],
   },
 
   loading: {
@@ -42,8 +51,15 @@ module.exports = {
   },
 
   axios: {
-    baseURL: "https://profy-shop.top/api"
-    // baseURL: "http://127.0.0.1:8000/api"
+    baseURL: "https://profy-shop.top/api",
+    // baseURL: "http://127.0.0.1:8000/api",
+
+    headers: {
+      common: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      post: {},
+    }
   },
 
   build: {
