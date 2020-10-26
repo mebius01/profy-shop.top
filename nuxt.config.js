@@ -78,7 +78,6 @@ module.exports = {
   plugins: [
     { src: "@/plugins/aos", ssr: false },
     { src: "@/plugins/jsonld", ssr: true }
-  ]
-
+  ],
 }
 
