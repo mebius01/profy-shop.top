@@ -32,19 +32,12 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/gtm',
-    ['@nuxtjs/google-analytics', { id: "G-GRS5XES1K6"}],
     '@nuxtjs/robots'
   ],
 
   gtm: {
     id: 'GTM-K8HWWMZ'
   },
-  debug: {
-    sendHitTask: true
-  },
-  // googleAnalytics: {
-  //   id: 'G-GRS5XES1K6'
-  // },
 
   robots: {
     UserAgent: '*',
@@ -84,7 +77,8 @@ module.exports = {
 
   plugins: [
     { src: "@/plugins/aos", ssr: false },
-    { src: "@/plugins/jsonld", ssr: true }
+    { src: "@/plugins/jsonld", ssr: true },
+    { src: '@/plugins/ga.js', ssr: false }
   ],
 }
 
