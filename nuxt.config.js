@@ -32,11 +32,16 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/gtm',
+    '@nuxtjs/google-analytics',
     '@nuxtjs/robots'
   ],
 
   gtm: {
     id: 'GTM-K8HWWMZ'
+  },
+
+  googleAnalytics: {
+    id: 'G-GRS5XES1K6'
   },
 
   robots: {
