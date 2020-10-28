@@ -11,6 +11,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {name:'theme-color', content: '#373F48'},
       { hid: 'description', name: 'description', content: 'Nuxt.js project' },
       { property: "og:type", content: "business.business" },
       { property: "og:title", content: "Profy Shop Top - Красота в Твоих руках!" },
@@ -32,7 +33,8 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/gtm',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    '@nuxtjs/pwa',
   ],
 
   gtm: {
@@ -42,6 +44,23 @@ module.exports = {
   robots: {
     UserAgent: '*',
     Disallow: ['/api', '/admin'],
+  },
+
+  pwa: {
+    meta: {
+      title: 'Profy Shop Top - Красота в Твоих руках!',
+      author: '8th-port',
+    },
+    icon: {
+      source: './static/favicon.png',
+      fileName: 'favicon.png',
+    },
+    manifest: {
+      name: 'Profy Shop Top',
+      short_name: 'ProfyShop',
+      lang: 'ru',
+      theme_color: '#373F48'
+    },
   },
 
   loading: {
@@ -58,7 +77,9 @@ module.exports = {
       common: {
         "Content-type": "application/json; charset=UTF-8",
       },
-      post: {},
+      post: {
+        
+      },
     }
   },
 
