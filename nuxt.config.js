@@ -12,11 +12,12 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {name:'theme-color', content: '#373F48'},
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
+      { hid: 'description', name: 'description', content: 'Profy Shop Top - beauty-room оригинальной косметики для профессионального и домашнего ухода за лицом и телом' },
       { property: "og:type", content: "business.business" },
       { property: "og:title", content: "Profy Shop Top - Красота в Твоих руках!" },
       { property: "og:url", content: "https://profy-shop.top" },
-      { property: "og:image", content: "https://profy-shop.top/static/img/logo.png" },
+      { property: "og:image", content: "https://profy-shop.top/static/img/logo.jpg" },
+      { property: "og:logo", content: "https://profy-shop.top/static/img/logo.jpg" },
       { property: "business:contact_data:street_address", content: "Космонавтов 124Б, офис 2" },
       { property: "business:contact_data:locality", content: "Николаев" },
       { property: "business:contact_data:region", content: "Николаевская" },
@@ -49,7 +50,7 @@ module.exports = {
   pwa: {
     meta: {
       title: 'Profy Shop Top - Красота в Твоих руках!',
-      author: '8th-port',
+      author: 'Profy Shop Top',
     },
     icon: {
       source: './static/favicon.png',
