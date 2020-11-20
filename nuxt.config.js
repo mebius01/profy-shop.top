@@ -99,7 +99,7 @@ module.exports = {
   plugins: [
     { src: "@/plugins/aos", ssr: false },
     { src: "@/plugins/jsonld", ssr: true },
-    { src: '@/plugins/ga.js', ssr: false }
+    // { src: '@/plugins/ga.js', ssr: false }
   ],
 }
 
